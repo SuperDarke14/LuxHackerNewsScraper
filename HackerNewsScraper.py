@@ -14,7 +14,7 @@ newList = fireBaseTop.json() #put them in a newList
 today = datetime.date.today()
 
 def fetchInfo(): #a function to convert the IDs into actual json vals
-    for each in newList[0:50]: #I've limited this to 51 stories for speeed
+    for each in newList[0:int(input("Input maximum number of stories to fetch: "))]: #I've limited this to 51 stories for speeed
         tempVar = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{each}.json")
         newStories.append(tempVar.json()) #put it in the list
 def purgeInfo(z): #how we purge the stories so it's only high-quality
